@@ -27,9 +27,9 @@ functions:
     handler: src/handler.start
     name: ssEc2Test-start
     events:
-      - schedule: cron(15:15 ? * TUE-TUE *) 
+      - schedule: cron(15 15 ? * TUE-TUE *) 
   stop:
     handler: src/handler.stop
     name: ssEc2Test-stop
     events:
-      - schedule: cron(15:20 ? * TUE-TUE *)
+      - schedule: cron(15 20 ? * TUE-TUE *)
