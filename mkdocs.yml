@@ -1,0 +1,8 @@
+site_name: ssEc2Test
+site_description: "start stop"
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core

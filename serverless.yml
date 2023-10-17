@@ -1,0 +1,35 @@
+service: ssEc2Test
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: us-east-1
+  memorySize: 128
+  timeout: 10
+  environment:
+    INSTANCE_IDS: "i-0d684d8babdc6fe06"
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+          - "ec2:StartInstances"
+          - "ec2:StopInstances"
+          Resource: "*" 
+          
+plugins:
+  - serverless-offline
+  
+functions:
+  start:
+    handler: src/handler.start
+    name: ssEc2Test-start
+    events:
+      - schedule: cron(15:15 ? * TUE-TUE *) 
+  stop:
+    handler: src/handler.stop
+    name: ssEc2Test-stop
+    events:
+      - schedule: cron(15:20 ? * TUE-TUE *)

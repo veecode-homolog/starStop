@@ -1,0 +1,16 @@
+{
+  "name": "ssEc2Test",
+  "version": "1.0.0",
+  "description": "start stop" ,
+  "main": "src/handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sls offline start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^12.0.4"
+  }
+}
