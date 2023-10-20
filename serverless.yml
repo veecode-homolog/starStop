@@ -1,4 +1,4 @@
-service: ssEc2Test
+service: starStop
 frameworkVersion: "3"
 
 provider:
@@ -25,11 +25,11 @@ plugins:
 functions:
   start:
     handler: src/handler.start
-    name: ssEc2Test-start
+    name: starStop-start
     events:
       - schedule: cron(15 15 ? * TUE-TUE *) 
   stop:
     handler: src/handler.stop
-    name: ssEc2Test-stop
+    name: starStop-stop
     events:
       - schedule: cron(15 20 ? * TUE-TUE *)
